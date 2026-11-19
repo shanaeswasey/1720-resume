@@ -2,8 +2,17 @@
 
 /******************************** COLOR SCHEME ********************************/
 :root {
-    --color-primary: #21409A;
-    --color-secondary: #ED1C24;
+
+    --color-primary: #ABABF4; /* Main soft blue from the logo */
+    --color-secondary: #ABF4F4; /* Secondary soft cyan */
+
+    /* Colors for the six resume sections */
+    --color-about: #F4F4AB; /* About Me background */
+    --color-education: #ABF4AB; /* Education background */
+    --color-work: #ABF4F4; /* Work Experience background */
+    --color-technology: #ABABF4; /* Technology Stack background */
+    --color-clients: #F4ABF4; /* Clients background */
+    --color-contact: #F4ABAB; /* Contact background */
 
     /*Series of Grey Scale Colors*/
     --color-mygrey-05: lab(98% 0 0);
@@ -25,227 +34,278 @@
 /******************************** BORDER BOX ********************************/
 /* Makes sizing and scrolling work more smoothly on the whole page */
 * {
-    box-sizing: border-box;
-    /* Makes sizing and scrolling work more smoothly on the whole page */
-    scroll-behavior: smooth;
-    /* Makes the page scroll smoothly when moving to another section */
+    box-sizing: border-box; /* Makes sizing and scrolling work more smoothly on the whole page */
+    scroll-behavior: smooth; /* Makes the page scroll smoothly when moving to another section */
 }
 
 /******************************** BODY TAGS ********************************/
 /* Controls the basic look of the whole page */
+
 body {
-    font-family: "Outfit", sans-serif;
-    /* Uses the chosen font on the whole page */
-    background-color: var(--color-mygrey-05);
-    /* Changes the color of the website background */
+
+    font-family: "Fira Sans", sans-serif; /* Uses the chosen font on the whole page */
+    background-color: var(--color-mygrey-05); /* Changes the color of the website background */
 }
 
 /******************************** HEADER ********************************/
 /* Controls how the top header of the page looks */
+
 header {
-    padding: 10px 0 10px 10px;
-    /* Adds space around the inside of the header */
-    display: grid;
-    /* Places the logo, site name, and menu button in a row */
-    grid-template-columns: 1fr 44px;
-    /* Sets the width of the logo, site name area, and menu button */
-    align-items: center;
-    /* Lines the items up along the bottom */
-    column-gap: 8px;
-    /* Adds space between the items */
-    border-bottom: solid 1px var(--color-mygrey-20);
-    /* Adds space between the items */
+    padding: 10px 0 10px 10px;/* Adds space around the inside of the header */
+    display: grid; /* Places the logo, site name, and menu button in a row */
+    grid-template-columns: 1fr; /* Uses one column since the hamburger button was removed */
+    align-items: center; /* Lines the items up along the bottom */
+    column-gap: 8px; /* Adds space between the items */
+    border-bottom: solid 1px var(--color-mygrey-20); /* Adds space between the items */
 }
 
 header img {
-    display: block;
-    /* Makes the logo behave like its own block */
-    width: 137px;
-    /* Makes the logo fill the width of its grid space */
-    height: auto;
-    /* Keeps the logo from looking stretched */
-    padding-bottom: 5px;
-    /* Adds a space under the logo */
+    display: block; /* Makes the logo behave like its own block */
+    width: 150px; /* Makes the logo fill the width of its grid space */
+    height: auto; /* Keeps the logo from looking stretched */
+    padding-bottom: 5px; /* Adds a space under the logo */
 }
 
 
 
 /******************************** NAVIGATION ********************************/
+
 /* Controls how the navigation menu looks */
 nav {
-    background-color: var(--color-mygrey-20);
-    /* Sets the background color of the navigation menu */
-    display: none;
-    /* Hides the menu on small screens until the hamburger is clicked */
+    background-color: var(--color-mygrey-90); /* Keeps the navigation dark with white icons */
+    display: block; /* Keeps all six navigation icons visible on mobile */
+    position: sticky; /* Keeps the navigation visible when scrolling */
+top: 0; /* Keeps it at the top of the screen */
+z-index: 100; /* Keeps the navigation above the page content */
 }
 
+
+
+/* Controls the list of navigation links */
 nav ul {
-    margin: 0;
-    /* Removes the outside space around the navigation list */
-    padding: 0;
-    /* Removes the inside space around the navigation list */
-    list-style-type: none;
-    /* Removes the bullet points from the navigation links */
+    margin: 0; /* Removes space outside the navigation list */
+    padding: 0; /* Removes space inside the navigation list */
+    list-style-type: none; /* Removes the bullet points */
+    display: flex; /* Places the six navigation items in a row */
+    justify-content: space-around; /* Spreads the icons across the navigation bar */
+
+
+/* Makes the navigation items fill the entire bar */
+nav li {
+    flex: 1; /* Gives all six navigation items equal space */
 }
+
+}
+
 
 /* Controls the navigation links and how they look */
 nav a {
-    display: block;
-    /* Makes each navigation link take up its own full row */
-    font-size: .8rem;
-    /* Sets the size of the navigation link text */
-    font-weight: 400;
-    /* Sets the navigation text to normal thickness */
-    color: var(--color-mygrey-90);
-    text-decoration: none;
-    padding: .85rem 10px;
+    display: flex; /* Lets the icon sit in the center of the link */
+    width: 100%; /* Makes each navigation link fill its available space */
+    justify-content: center; /* Centers the icon horizontally */
+    align-items: center; /* Centers the icon vertically */
+    font-size: .8rem; /* Keeps the existing navigation text size */
+    font-weight: 400; /* Keeps the existing text thickness */
+    color: var(--color-mygrey-10); /* Uses light text on the dark navigation */
+    text-decoration: none; /* Removes the underline from links */
+    padding: .85rem 10px; /* Adds space inside each navigation link */
 }
 
-/* Changes how a navigation link looks when the mouse is over it */
+
+
+/* Changes how a navigation link looks when hovered over */
 nav a:hover {
-    background-color: var(--color-secondary);
-    /*Sets the background color of the hover over on navigation menu*/
-    color: var(--color-mygrey-10);
-    /* Changes the text color when hovering over a link */
-    /*Sets the font color of the hover over on navigation menu*/
+    background-color: var(--color-mygrey-70); /* Uses gray to match the button hover states */
+    color: var(--color-mygrey-05); /* Keeps the hover text white */
 }
 
-/* Shows which navigation link is the current page */
+/* Highlights the navigation item for the current section */
 nav li.active a {
-    background-color: var(--color-primary);
-    /* Changes the background color of the active page link */
-    color: var(--color-mygrey-10);
+    background-color: var(--color-primary); /* Uses soft blue for the selected item */
+    color: var(--color-mygrey-90); /* Makes the selected text dark */
 }
 
-/* Shows the navigation menu after the hamburger button is clicked */
-nav.show {
-    display: block;
-    /* Makes the hidden navigation menu appear */
+
+
+
+/* Controls the SVG icons in the navigation menu */
+nav img {
+    display: block; /* Makes each icon behave like a block */
+    width: 30px; /* Sets the icon width */
+    height: 30px; /* Sets the icon height */
+    filter: brightness(0) invert(1); /* Changes the black SVG icons to white */
 }
 
-/******************************** HAMBURGER ********************************/
-/* Controls how the hamburger menu button looks */
-.hamburger {
-    background: none;
-    /* Removes the button background */
-    border: none;
-    /* Removes the button border */
-    color: var(--color-primary);
-    /* Sets the hamburger icon color */
-    cursor: pointer;
-    /* Makes the mouse show a pointer over the button */
-    font-size: 2rem;
-    /* Sets the size of the hamburger icon */
-    font-family: Verdana;
-    /* Uses Verdana for the hamburger symbol */
+
+/* Makes the selected navigation icon dark */
+nav li.active img {
+    filter: brightness(0); /* Changes the selected icon to black */
 }
 
-/* Shows the hamburger icon before the menu opens */
-.hamburger::before {
-    content: "\2630";
-    /* Displays the hamburger symbol */
+
+
+/* Hides the navigation text on small screens */
+nav span {
+    display: none; /* Shows only the SVG icons on mobile */
 }
 
-/* Changes the hamburger into a close icon when the menu is open */
-.hamburger.show::before {
-    content: "\00D7";
-    /* Displays the X close symbol */
-}
+
+
 
 /******************************** MAIN STUFF ********************************/
-h1 {
-    font-size: 1.5rem;
-    /* Sets the heading text size */
-    color: var(--color-secondary);
-    /* Sets the heading text color */
-    font-weight: 500;
-    /* Sets the text thickness */
-    margin-left: 10px;
-    /* Adds space to the left of the heading so it's not on the edge of the page */
+
+/* Controls the spacing inside each resume section */
+main section {
+    padding: 20px; /* Adds space around the section content */
+    scroll-margin-top: 45px; /* Keeps headings visible below the sticky navigation */
 }
 
-p {
-    color: var(--color-primary);
+
+
+/* Sets the background color for the About Me section */
+#about {
+    background-color: var(--color-about); /* Uses soft yellow */
 }
+
+/* Sets the background color for the Education section */
+#education {
+    background-color: var(--color-education); /* Uses soft green */
+}
+
+/* Sets the background color for the Work Experience section */
+#work {
+    background-color: var(--color-work); /* Uses soft cyan */
+}
+
+/* Sets the background color for the Technology Stack section */
+#technology {
+    background-color: var(--color-technology); /* Uses soft blue */
+}
+
+/* Sets the background color for the My Work section */
+#portfolio {
+    background-color: var(--color-clients); /* Uses soft purple */
+}
+
+/* Sets the background color for the Contact section */
+#contact {
+    background-color: var(--color-contact); /* Uses soft red */
+}
+
+/* Controls the headings in each resume section */
+main h2 {
+    color: var(--color-mygrey-90); /* Makes the section headings dark */
+    font-size: 1.8rem; /* Sets the section heading size */
+    font-weight: 700; /* Makes the headings bold */
+}
+
+/* Controls the smaller headings inside the resume sections */
+main h3 {
+    color: var(--color-mygrey-90); /* Makes the smaller headings dark */
+    font-size: 1.2rem; /* Sets the smaller heading size */
+    font-weight: 600; /* Makes the headings stand out */
+}
+
+/* Controls the paragraph text inside the resume sections */
+main p {
+    color: var(--color-mygrey-90); /* Makes paragraph text dark */
+    line-height: 1.5; /* Adds spacing between lines for readability */
+}
+
+
+/* Arranges the technology cards on small screens */
+.technology-grid {
+    display: grid; /* Creates a grid for the technology cards */
+    grid-template-columns: 1fr; /* Displays one card per row */
+    gap: 16px; /* Adds space between the cards */
+}
+
+/* Controls the appearance of each technology card */
+.technology-card {
+    background-color: var(--color-mygrey-05); /* Gives each card a light background */
+    border: 1px solid var(--color-mygrey-30); /* Adds a thin border around the card */
+    border-radius: 8px; /* Slightly rounds the corners */
+    padding: 16px; /* Adds space inside the card */
+    text-align: center; /* Centers the technology names and icons */
+}
+
+
+/* Arranges the client cards on small screens */
+.clients-grid {
+    display: grid; /* Creates a grid for the client cards */
+    grid-template-columns: 1fr; /* Displays one client card per row */
+    gap: 16px; /* Adds space between the client cards */
+}
+
+/* Controls the appearance of each client card */
+.client-card {
+    background-color: var(--color-mygrey-05); /* Gives each card a light background */
+    border: 1px solid var(--color-mygrey-30); /* Adds a thin border around the card */
+    border-radius: 8px; /* Slightly rounds the corners */
+    padding: 16px; /* Adds space inside the card */
+    text-align: center; /* Centers the project names and images */
+}
+
+
+/* Makes the Learn More links look like buttons */
+.client-card a {
+    display: inline-block; /* Lets the link have button spacing */
+    background-color: var(--color-mygrey-90); /* Gives the button a dark background */
+    color: var(--color-mygrey-05); /* Makes the text light */
+    padding: 12px 20px; /* Adds space inside the button */
+    border-radius: 5px; /* Slightly rounds the corners */
+    text-decoration: none; /* Removes the link underline */
+}
+
+
+/* Changes the Learn More buttons when hovered over */
+.client-card a:hover {
+    background-color: var(--color-mygrey-70); /* Lightens the button background when hovered */
+}
+
+
+
+/* Controls the layout of the Contact form */
+#contact form {
+    display: flex; /* Arranges the form fields vertically */
+    flex-direction: column; /* Places each field below the previous one */
+    gap: 12px; /* Adds space between the form fields */
+}
+
+/* Controls the name, email, and message fields */
+#contact input,
+#contact textarea {
+    padding: 12px; /* Adds space inside each field */
+    border: 1px solid var(--color-mygrey-40); /* Adds a border around the fields */
+    border-radius: 5px; /* Slightly rounds the corners */
+    background-color: var(--color-mygrey-05); /* Gives the fields a light background */
+    color: var(--color-mygrey-90); /* Makes the entered text dark */  
+}
+
+/* Controls the Send Message button */
+#contact button {
+    background-color: var(--color-mygrey-90); /* Gives the button a dark background */
+    color: var(--color-mygrey-05); /* Makes the button text light */
+    border: none; /* Removes the default button border */
+    border-radius: 5px; /* Slightly rounds the corners */
+    padding: 12px; /* Adds space inside the button */
+    width: 180px; /* Keeps the button from stretching across the page */
+    cursor: pointer; /* Shows a pointer when hovering over the button */
+}
+
+
+/* Changes the Send Message button when hovered over */
+#contact button:hover {
+    background-color: var(--color-mygrey-70); /* Lightens the dark button when hovered */
+}
+
+
+
 
 /******************************** HIDE CONTENT ********************************/
 .hide {
     display: none;
     /* Hides the section that should not be showing */
-}
-
-/******************************** PARK CARDS ********************************/
-/* Creates a responsive grid for all of the park cards */
-.allparks {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px 10px;
-    margin: 10px;
-}
-
-/* Styles each park card and keeps the bottoms lined up */
-.allparks div {
-    border: solid 1px var(--color-mygrey-10);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Lets the park name sit on top of the image */
-.allparks section {
-    position: relative;
-}
-
-/* Makes each park image fill the card width */
-.allparks img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Places the park name on top of the park image */
-.allparks h2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 100%;
-    margin: 0;
-    padding: 0.5rem 10px;
-    font-weight: 500;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-/* Styles the text inside each park card */
-.allparks p {
-    font-weight: 200;
-    color: var(--color-mygrey-70);
-    margin: 0.5rem 10px;
-}
-
-/* Makes the labels inside the park information stand out */
-.allparks p span {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-mygrey-40);
-}
-
-/* Styles the Learn More link like a button */
-.allparks a {
-    display: block;
-    background-color: var(--color-primary);
-    margin: 0.5rem 10px;
-    margin-top: auto;
-    padding: 0.8rem 0;
-    text-align: center;
-    color: white;
-    border-radius: 99px;
-
-    &:hover {
-        background-color: var(--color-secondary);
-    }
 }
 
 
@@ -293,7 +353,7 @@ p {
 
 /* Changes the social icon box when the mouse is over it */
 .social a:hover {
-    background-color: var(--color-mygrey-10);
+    background-color: var(--color-primary);
     /* Makes the background lighter when hovering over the icon */
 }
 
@@ -301,8 +361,10 @@ p {
 /******************************** FOOTER STUFF ********************************/
 /* Controls how the footer at the bottom of the page looks */
 footer {
-    background-color: var(--color-mygrey-20);
+    background-color: var(--color-mygrey-90);
     /* Sets the footer background color */
+    color: var(--color-mygrey-05);
+    /* Sets the text color for the footer */
     padding: 1rem 0;
     /* Adds space above and below the footer content */
     text-align: center;

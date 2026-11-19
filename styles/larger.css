@@ -1,52 +1,99 @@
 /* Changes the layout for larger screens */
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 65rem) {
 
-    /* Keeps the main page sections from getting too wide */
-    header,
-    main,
-    nav,
-    footer {
-        max-width: 1200px; /* Sets the widest the content can grow */
-        margin: 0 auto; /* Centers the content on the page */
+    /******************************** BODY ********************************/
+
+    /* Creates the desktop layout with a sidebar */
+    body {
+        display: grid;
+        /* Uses a grid for the page layout */
+        grid-template-columns: 200px auto;
+        /* Makes a 200px sidebar and a content area */
     }
 
-    
+
+    /******************************** HEADER ********************************/
+
+    /* Places the header beside the sidebar */
+    header {
+        grid-column: 2;
+        /* Places the header in the main content column */
+        grid-template-columns: 1fr;
+        /* Uses one column for the logo */
+    }
+
+
     /******************************** NAVIGATION ********************************/
-/* Controls the navigation on larger screens */
-nav {
-    display: block; /* Keeps the navigation visible on larger screens */
+
+    /* Places the navigation in the left column */
+    nav {
+        grid-column: 1;
+        /* Places navigation in the sidebar column */
+        grid-row: 1 / span 2;
+        /* Extends navigation beside the page content */
+        position: static;
+        /* Turns off sticky navigation on desktop */
+        top: auto;
+        /* Removes the mobile top positioning */
+    }
+
+
+    /* Makes the navigation vertical and fixed */
+    nav ul {
+        flex-direction: column;
+        /* Stacks the navigation links vertically */
+        position: fixed;
+        /* Keeps the navigation visible while scrolling */
+        height: 100vh;
+        /* Makes navigation fill the screen height */
+        width: 200px;
+        /* Matches the sidebar width */
+        justify-content: center;
+        /* Centers the navigation links vertically */
+    }
+
+
+    /* Makes each navigation link fill its row */
+    nav a {
+        width: 100%;
+        /* Fills the sidebar width */
+        font-size: 1rem;
+        /* Makes the desktop navigation text larger */
+        justify-content: flex-end;
+        /* Aligns the text to the right */
+    }
+
+
+
+    /******************************** MAIN STUFF ********************************/
+
+    /* Places the resume content beside the navigation */
+    main {
+        grid-column: 2;
+        /* Uses the main content column */
+    }
+
+    /* Displays three technology cards per row */
+    .technology-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Creates three equal columns */
+    }
+
+    /* Displays three client cards per row */
+    .clients-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Creates three equal columns */
+    }
+
+
+    /******************************** FOOTER ********************************/
+
+    /* Places the footer below the main content */
+    footer {
+        grid-column: 2;
+        /* Keeps the footer beside the sidebar */
+    }
+
 }
 
-/* Places the navigation links in a row */
-nav ul {
-    display: flex; /* Places the links next to each other */
-    margin-left: 10px; /* Adds a little space on the left side of the menu */
-}
-
-/* Controls the look of each navigation link */
-nav a {
-    border-left: solid 1px var(--color-mygrey-30); /* Adds a line to the right side of the last link */
-    padding: .4rem 20px;
-}
-
-/* Adds a divider line to the last navigation link */
-nav li:last-child a {
-    border-right: solid 1px var(--color-mygrey-30); /* Adds a line to the right side of the last link */
-}
-
-/******************************** HEADER ********************************/
-header {
-    grid-template-columns: 1fr;
-}
-
-
-
-
-/******************************** HAMBURGER ********************************/
-/* Controls the hamburger button on larger screens */
-.hamburger {
-    display: none; /* Hides the hamburger button when the full navigation is visible */
-}
-
-
-} /* Ends the larger-screen layout rules */
+/* Ends the large-screen media query */

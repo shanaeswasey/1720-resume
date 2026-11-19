@@ -96,11 +96,13 @@
 
 
     <!--SCRIPTS--> <!-- Connects the JavaScript files that make parts of the page work -->
-    <!-- Makes the hamburger navigation menu open and close -->
+
+    <!-- Highlights the navigation link for the section currently in view -->
     <script src="scripts/navigation.js" defer></script>
 
-    <!-- Automatically puts the current year in the footer -->
+    <!-- Automatically updates the year in the footer -->
     <script src="scripts/year.js" defer></script>
+
 
 
 
@@ -113,9 +115,6 @@
         <img src="images/logo.svg" alt="Shanae Swasey Resume Logo" width="150" height="50">
 
 
-        <!-- Creates the hamburger button used to open the navigation menu -->
-        <button id="hamburger" class="hamburger" aria-label="Nav Link Button"></button>
-
     </header>
 
 
@@ -127,7 +126,7 @@
         <ul> <!-- Starts the list of navigation links -->
 
             <!-- Links to the About Me section -->
-            <li>
+            <li class="active"> <!-- Highlights About Me when the page first loads -->
                 <a href="#about">
                     <!-- Displays the About Me icon -->
                     <img src="images/icon-about.svg" alt="" width="30" height="30">
@@ -166,13 +165,13 @@
                 </a>
             </li>
 
-            <!-- Links to the Clients section -->
+            <!-- Links to the My Work section -->
             <li>
-                <a href="#client">
-                    <!-- Displays the Clients icon -->
+                <a href="#portfolio">
+                    <!-- Displays the My Work icon -->
                     <img src="images/icon-clients.svg" alt="" width="30" height="30">
-                    <!-- Displays the Clients text -->
-                    <span>Clients</span>
+                    <!-- Displays the My Work text -->
+                    <span>My Work</span>
                 </a>
             </li>
 
@@ -203,29 +202,57 @@
             <!-- Displays the About Me heading -->
             <h2>About Me</h2>
 
+            <br>
+
+
+            <!-- Displays my profile photo -->
+            <img src="images/profile.jpg" alt="Profile photo of Shanae Swasey" width="200">
+
+
             <!-- Displays my name -->
-            <h3>Shanae Swasey</h3>
+            <h1>Shanae Swasey</h1>
 
             <!-- Holds my professional introduction -->
-            <p>Professional introduction will go here.</p>
+            <p>I'm an aspiring UX/UI designer who enjoys creating user-friendly, visually appealing digital experiences.
+                I have experience with user research, wireframing, prototyping, and usability testing, along with a
+                background in web design and front-end development. I enjoy finding creative solutions to design
+                problems and improving how people interact with websites and apps.</p>
+
+            <br>
+
+
+            <!-- Displays my career goals -->
+            <h3>Career Goals</h3>
+
+            <!-- Describes my professional goals -->
+            <p>My goal is to land a UX/UI Designer position where I can help design and improve websites, apps, and
+                other digital products. I want to be part of a team where I can contribute creative ideas, solve real
+                usability problems, and learn from experienced designers. As I gain experience, I'd like to take on more
+                responsibility and eventually help lead design projects from the initial idea to the finished product.
+            </p>
+
+            <br>
+
 
             <!-- Displays the address heading -->
             <h3>Address</h3>
 
             <!-- Holds my location information -->
-            <p>Location information will go here.</p>
+            <p>Mapleton, Utah</p>
+
 
             <!-- Displays the phone heading -->
             <h3>Cell:</h3>
 
             <!-- Holds my phone number -->
-            <p>Phone number will go here.</p>
+            <p>(801) 360-XXXX</p>
+
 
             <!-- Displays the email heading -->
             <h3>Email:</h3>
 
             <!-- Holds my email address -->
-            <p>Email address will go here.</p>
+            <p>10637954@uvu.edu</p>
 
         </section> <!-- Ends the About Me section -->
 
@@ -238,28 +265,65 @@
             <!-- Displays the Education heading -->
             <h2>Education</h2>
 
+            <br>
+
             <!-- Displays the education image -->
             <!-- Education image will be added later -->
 
+
             <!-- Holds the first education entry -->
             <div class="education-entry">
-                <!-- Displays the school and degree -->
-                <h3>School and Degree</h3>
-                <!-- Displays the graduation date -->
-                <p>Graduation date</p>
-                <!-- Displays the field of study -->
-                <p>Field of study and additional details</p>
+
+                <!-- Displays the school name -->
+                <h3>Utah Valley University (UVU)</h3>
+
+                <!-- Displays the degree -->
+                <p>Bachelor of Science in Web Design and Development</p>
+
+                <!-- Displays the emphasis -->
+                <p>Emphasis: Interaction and User Experience Design</p>
+
+                <!-- Displays the expected graduation date -->
+                <p>Expected Graduation: 2028</p>
+
+                <br>
+
             </div>
 
             <!-- Holds the second education entry -->
             <div class="education-entry">
-                <!-- Displays the school and degree -->
-                <h3>School and Degree</h3>
-                <!-- Displays the graduation date -->
-                <p>Graduation date</p>
-                <!-- Displays the field of study -->
-                <p>Field of study and additional details</p>
+
+                <!-- Displays the school name -->
+                <h3>Park University</h3>
+
+                <!-- Displays the program studied -->
+                <p>Business Management Studies</p>
+
+                <!-- Displays the concentration -->
+                <p>Concentration: Finance</p>
+
+                <!-- Explains why no graduation date is listed -->
+                <p>Transferred to Utah Valley University</p>
+
             </div>
+
+            <br>
+
+            <!-- Holds the third education entry -->
+            <div class="education-entry">
+
+                <!-- Displays the school name -->
+                <h3>Landmark Highschool</h3>
+
+                <!-- Displays the field of study -->
+                <p>General Studies</p>
+
+                <!-- Displays the graduation year -->
+                <p>Graduated: 2011</p>
+
+            </div>
+
+
 
         </section> <!-- Ends the Education section -->
 
@@ -271,37 +335,50 @@
             <!-- Displays the Work Experience heading -->
             <h2>Work Experience</h2>
 
-            <!-- Holds the first job -->
-            <div class="work-entry">
-                <!-- Displays the employer and location -->
-                <h3>Company Name — Location</h3>
+            <br>
 
-                <!-- Displays the dates of employment -->
-                <p>Start Date - End Date</p>
+
+            <!-- Holds the first work experience -->
+            <div class="work-entry">
+
+                <!-- Displays the company and location -->
+                <h3>Krohn Breakthrough Foundation - Orem, UT</h3>
+
+                <!-- Displays the employment dates -->
+                <p>2022 - 2023</p>
 
                 <!-- Displays the job title -->
-                <p>Job Title</p>
+                <p><strong>Executive Assistant</strong></p>
 
                 <!-- Describes the job responsibilities -->
-                <p>Job responsibilities and accomplishments will go here.</p>
+                <p>Supported executive leadership by coordinating schedules, meetings, and communications. Helped
+                    organize workflows, manage information, and keep projects running smoothly.</p>
+
             </div>
 
-            <!-- Holds the second job -->
+            <!-- Holds the second work experience -->
             <div class="work-entry">
-                <!-- Displays the employer and location -->
-                <h3>Company Name — Location</h3>
 
-                <!-- Displays the dates of employment -->
-                <p>Start Date - End Date</p>
+                <br>
+
+                <!-- Displays the company -->
+                <h3>United States Army</h3>
+
+                <!-- Displays the employment dates -->
+                <p>2011 - 2021</p>
 
                 <!-- Displays the job title -->
-                <p>Job Title</p>
+                <p><strong>Finance Management Technician</strong></p>
 
                 <!-- Describes the job responsibilities -->
-                <p>Job responsibilities and accomplishments will go here.</p>
+                <p>Managed financial operations, improved administrative processes, and resolved complex issues. Worked
+                    with teams to improve efficiency, accuracy, and communication.</p>
+
             </div>
+
 
         </section> <!-- Ends the Work Experience section -->
+
 
 
 
@@ -311,40 +388,52 @@
             <!-- Displays the Technology Stack heading -->
             <h2>Technology Stack</h2>
 
+            <br>
+
             <!-- Holds all the technology cards -->
             <div class="technology-grid">
 
                 <!-- Holds the first technology card -->
                 <div class="technology-card">
                     <!-- Displays the technology name -->
-                    <h3>Technology Name</h3>
+                    <h3>Figma</h3>
 
-                    <!-- Technology icon will go here -->
+
+                    <!-- Displays the Figma logo -->
+                    <img src="images/figma.svg" alt="Figma logo" width="80" height="80">
+
 
                     <!-- Describes the technology -->
-                    <p>Technology description will go here.</p>
+                    <p>Creating wireframes, interactive prototypes, and user-friendly interface designs.</p>
                 </div>
 
                 <!-- Holds the second technology card -->
                 <div class="technology-card">
                     <!-- Displays the technology name -->
-                    <h3>Technology Name</h3>
+                    <h3>Adobe Creative Cloud</h3>
 
-                    <!-- Technology icon will go here -->
+
+                    <!-- Displays the Adobe Creative Cloud logo -->
+                    <img src="images/adobe-creative-cloud.svg" alt="Adobe Creative Cloud logo" width="80" height="80">
+                    <!-- Adobe icon will go here -->
 
                     <!-- Describes the technology -->
-                    <p>Technology description will go here.</p>
+                    <p>Using Illustrator and Photoshop to create graphics, logos, and visual design assets.</p>
                 </div>
 
                 <!-- Holds the third technology card -->
                 <div class="technology-card">
-                    <!-- Displays the technology name -->
-                    <h3>Technology Name</h3>
 
-                    <!-- Technology icon will go here -->
+                    <!-- Displays the technology name -->
+                    <h3>Visual Studio Code</h3>
+
+                    <!-- Displays the Visual Studio Code logo -->
+                    <img src="images/vscode.svg" alt="Visual Studio Code logo" width="80" height="80">
 
                     <!-- Describes the technology -->
-                    <p>Technology description will go here.</p>
+                    <p>Using Visual Studio Code to write and organize HTML, CSS, and JavaScript for responsive websites.
+                    </p>
+
                 </div>
 
             </div> <!-- Ends the technology cards -->
@@ -354,63 +443,98 @@
 
 
 
-        <!-- Starts the Clients section -->
-        <section id="client">
+        <!-- Starts the My Work section -->
+        <section id="portfolio">
 
-            <!-- Displays the Clients heading -->
-            <h2>Clients</h2>
+            <!-- Displays the My Work heading -->
+            <h2>My Work</h2>
 
-            <!-- Introduces the client projects -->
-            <p>Projects and client work will go here.</p>
 
-            <!-- Holds all the client cards -->
+            <!-- Introduces the school projects -->
+            <p>A selection of projects I've created while studying web design, development, and user experience design.
+            </p>
+
+            <br>
+
+            <!-- Holds all the project cards -->
             <div class="clients-grid">
 
-                <!-- Holds the first client card -->
+                <!-- Holds the first project card -->
                 <div class="client-card">
-                    <!-- Displays the client or project name -->
-                    <h3>Client or Project Name</h3>
 
-                    <!-- Client image will be added later -->
+                    <!-- Displays the project name -->
+                    <h3>Miles to Memories</h3>
 
-                    <!-- Describes the client or project -->
-                    <p>Client or project description will go here.</p>
 
-                    <!-- Links to the client or project website -->
-                    <a href="#">Learn More</a>
+                    <!-- Displays the Miles to Memories project screenshot -->
+                    <img src="images/miles-to-memories.png" alt="Miles to Memories motorcycle ride journal app design"
+                        width="300" height="auto">
+
+
+                    <!-- Describes the project -->
+                    <p>A motorcycle ride journal app designed in Figma. The project focuses on UX research, usability
+                        testing, wireframing, and interactive prototyping to help riders organize and remember their
+                        experiences.</p>
+
+
+                    <!-- Opens the Miles to Memories Figma project in a new tab -->
+                    <a href="https://www.figma.com/design/BnqbMf8vNTNpTKczXo6BtA/DWDD-2510?node-id=555-1554&amp;t=v53cchGKlUQzmjl1-1"
+                        target="_blank" rel="noopener noreferrer">Learn More</a>
+
+
                 </div>
+
 
                 <!-- Holds the second client card -->
                 <div class="client-card">
-                    <!-- Displays the client or project name -->
-                    <h3>Client or Project Name</h3>
 
-                    <!-- Client image will be added later -->
+                    <!-- Displays the project name -->
+                    <h3>Feit Electric App Redesign</h3>
 
-                    <!-- Describes the client or project -->
-                    <p>Client or project description will go here.</p>
+                    <!-- Displays the Feit Electric project screenshot -->
+                    <img src="images/feit-electric.png" alt="Feit Electric smart lighting app redesign" width="300">
 
-                    <!-- Links to the client or project website -->
-                    <a href="#">Learn More</a>
+                    <!-- Describes the project -->
+                    <p>A UX/UI redesign of the Feit Electric smart lighting app focused on improving navigation, visual
+                        design, and usability. The project includes wireframing and designing more intuitive controls
+                        for smart lighting features.</p>
+
+
+                    <!-- Opens the Feit Electric design project in a new tab -->
+                    <a href="https://www.figma.com/design/WZ4st9Enev9OjQkT7MisV9/Design-Journals---Projects?node-id=257-1449&amp;t=nEtZuBOeDpsKoWB6-1"
+                        target="_blank" rel="noopener noreferrer">Learn More</a>
+
+
                 </div>
+
+
 
                 <!-- Holds the third client card -->
                 <div class="client-card">
-                    <!-- Displays the client or project name -->
-                    <h3>Client or Project Name</h3>
 
-                    <!-- Client image will be added later -->
+                    <!-- Displays the project name -->
+                    <h3>AOL Mail App Redesign</h3>
 
-                    <!-- Describes the client or project -->
-                    <p>Client or project description will go here.</p>
+                    <!-- Displays the AOL Mail project screenshot -->
+                    <img src="images/aol-mail.png" alt="AOL Mail mobile app redesign" width="300">
 
-                    <!-- Links to the client or project website -->
-                    <a href="#">Learn More</a>
+                    <!-- Describes the project -->
+                    <p>A UX/UI redesign of the AOL Mail mobile app focused on improving navigation, organization, and
+                        usability. The project includes wireframes for the inbox, dashboard, email composition, and
+                        contact management screens.</p>
+
+
+                    <!-- Opens the AOL Mail redesign in a new tab -->
+                    <a href="https://www.figma.com/design/WZ4st9Enev9OjQkT7MisV9/Design-Journals---Projects?node-id=36-2&amp;t=nEtZuBOeDpsKoWB6-1"
+                        target="_blank" rel="noopener noreferrer">Learn More</a>
+
                 </div>
 
-            </div> <!-- Ends the client cards -->
 
-        </section> <!-- Ends the Clients section -->
+
+            </div> <!-- Ends the project cards -->
+
+        </section> <!-- Ends the My Work section -->
 
 
 
@@ -450,11 +574,15 @@
 
             </form> <!-- Ends the contact form -->
 
+            <br>
+
             <!-- Displays the email heading -->
             <h3>Email</h3>
 
-            <!-- Holds my contact email address -->
-            <p>Email address will go here.</p>
+
+            <!-- Displays my email address as a clickable link -->
+            <p><a href="mailto:10637954@uvu.edu">10637954@uvu.edu</a></p>
+
 
         </section> <!-- Ends the Contact section -->
 
@@ -472,12 +600,12 @@
         <section class="social">
 
             <!-- Links to GitHub -->
-            <a href="https://www.github.com" target="_blank"><img src="images/icon-github.svg" alt="GitHub Icon"
-                    width="16" height="16"></a>
+            <a href="https://github.com/shanaeswasey" target="_blank"><img src="images/icon-github.svg"
+                    alt="GitHub Icon" width="16" height="16"></a>
 
             <!-- Links to LinkedIn -->
-            <a href="https://www.linkedin.com" target="_blank"><img src="images/icon-linkedin.svg" alt="LinkedIn Icon"
-                    width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/shanae-swasey-4a54143a4/" target="_blank"><img
+                    src="images/icon-linkedin.svg" alt="LinkedIn Icon" width="16" height="16"></a>
 
             <!-- Links to YouTube -->
             <a href="https://www.youtube.com" target="_blank"><img src="images/icon-youtube.svg" alt="Youtube Icon"

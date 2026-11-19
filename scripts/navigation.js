@@ -1,10 +1,32 @@
-// Store the selected elements that we are going to use.
-const hambutton = document.querySelector('#hamburger') // Finds the hamburger button on the page
-const mainnav = document.querySelector('#navbar') // Finds the navigation menu on the page
+// GET A LIST OF ITEMS TO WATCH
+const myListOfItems = document.querySelectorAll('main section')
 
-//Toggle class on or off- change hamburger menu, show and hide navigation menu
-// Runs this code when the hamburger button is clicked
-hambutton.addEventListener('click', () => {
-    hambutton.classList.toggle('show') // Adds or removes the "show" class on the hamburger button
-    mainnav.classList.toggle('show') // Adds or removes the "show" class on the navigation menu
-})
+// CONFIGURE THE OVSERVER
+let observerOptions = {
+    //null is the default and references the viewport
+    root: null, //alters the viewport. negative values decrease the size.
+    rootMargin: '-40% 0px -40% 0px', // Watches a smaller area near the middle of the screen
+    threshold: 0
+}
+
+// AllItems is a list of all elements being watched
+const myObserver = new IntersectionObserver(allItems => {
+    allItems.forEach(singleItem => {
+        if (singleItem.isIntersecting) {
+            highlight(singleItem.target)
+        }
+    })
+}, observerOptions)
+
+// FUNCTION TO ADD A CLASS
+function highlight(cmi) {
+    document.querySelector('nav li.active').classList.remove('active');
+    let theid = cmi.getAttribute('id');
+    let newActiveLink = document.querySelector(`[href="#${theid}"]`)
+    newActiveLink.parentElement.classList.add('active');
+}
+
+// CALL THE OBSERVER ON PAGE LOAD
+myListOfItems.forEach(item => {
+    myObserver.observe(item)
+});

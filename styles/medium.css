@@ -1,0 +1,34 @@
+/* Changes the layout for medium-sized screens */
+@media only screen and (min-width: 48rem) {
+
+    /******************************** NAVIGATION ********************************/
+
+    /* Hides the navigation icons on medium screens */
+    nav img {
+        display: none;
+    }
+
+    /* Shows the navigation text on medium screens */
+    nav span {
+        display: block;
+    }
+
+
+    /******************************** MAIN STUFF ********************************/
+
+    /* Displays technology cards in two columns */
+    .technology-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Displays client cards in two columns on medium screens */
+    .clients-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Creates two equal columns */
+    }
+
+
+}
+
+/* end media query */
